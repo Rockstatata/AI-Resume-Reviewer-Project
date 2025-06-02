@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlmodel
+psycopg2-binary
+python-dotenv
+python-jose[cryptography]
+passlib[bcrypt]
+pdfminer.six
+python-docx
+reportlab
+openai
