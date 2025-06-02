@@ -6,7 +6,7 @@ from app.auth.jwt import create_access_token
 from app.db.session import SessionDep
 from app.models.user import User
 from app.schemas.user import UserCreate, UserRead
-from app.utils.file_utils import hash_password, verify_password
+from app.utils.security import hash_password, verify_password
 from fastapi import Request
 from typing import Set
 

@@ -179,6 +179,28 @@ See `.env.example` for all required variables:
 
 ---
 
+# 📬 Example Requests
+
+**Register:**
+
+```sh
+curl -X POST http://localhost:8000/auth/register -H "Content-Type: application/json" -d '{"email":"user@example.com","password":"yourpassword"}'
+```
+
+**Login:**
+
+```sh
+curl -X POST http://localhost:8000/auth/login -H "Content-Type: application/json" -d '{"email":"user@example.com","password":"yourpassword"}'
+```
+
+**Upload Resume:**
+
+```sh
+curl -X POST http://localhost:8000/resume/upload -H "Authorization: Bearer <token>" -F "file=@your_resume.pdf"
+```
+
+---
+
 ## 🛡️ Security & Validation
 
 - Only PDF and DOCX files are accepted for upload
@@ -233,6 +255,80 @@ services:
 
 - Add your tests in the `tests/` directory.
 - Run with `pytest` or your preferred test runner.
+
+---
+
+## 🧑‍💻 Tech Stack & Skills Demonstrated
+
+- **Python 3.11+**  
+  Modern, type-annotated Python for backend development.
+
+- **FastAPI**  
+  High-performance, async web framework for building APIs with automatic OpenAPI/Swagger docs.
+
+- **SQLModel & SQLAlchemy**  
+  Modern ORM for defining models, relationships, and database CRUD operations, leveraging SQLAlchemy under the hood.
+
+- **PostgreSQL**  
+  Robust, production-grade relational database for storing users, resumes, reviews, and job matches.
+
+- **Authentication & Security**
+
+  - **OAuth2/JWT**: Secure, stateless authentication with role-based access control (`user`, `admin`).
+  - **Password Hashing**: Secure password storage using `passlib` and bcrypt.
+  - **File Validation**: Strict file type and size checks for uploads.
+
+- **AI Integration**
+
+  - **OpenAI/OpenRouter API**: Integrates with LLMs for resume analysis, scoring, and job description matching.
+  - **Prompt Engineering**: Carefully crafted prompts for structured, actionable AI feedback.
+
+- **Document Parsing**
+
+  - **pdfminer.six**: Extracts text from PDF resumes.
+  - **python-docx**: Extracts text from DOCX resumes.
+
+- **Background Processing**
+
+  - **FastAPI BackgroundTasks**: Non-blocking, async execution for AI review and PDF generation.
+
+- **PDF Generation**
+
+  - **ReportLab**: Programmatic creation of downloadable, formatted PDF review reports.
+
+- **Admin & User Management**
+
+  - **Role-based Endpoints**: Separate admin/user APIs, with admin dashboards and stats.
+
+- **Rate Limiting**
+
+  - Per-user, per-day review limits to prevent abuse.
+
+- **Docker (optional)**
+
+  - Containerization for easy deployment and reproducibility.
+
+- **Testing**
+
+  - Project structure ready for `pytest` and automated testing.
+
+- **DevOps Ready**
+  - `.env`-based configuration, requirements management, and example Docker setup.
+
+---
+
+**Skillset demonstrated:**
+
+- Modern Python backend development
+- API design and documentation
+- Secure authentication and authorization
+- AI/LLM integration and prompt engineering
+- File handling and validation
+- Asynchronous programming and background task management
+- Database modeling and ORM usage
+- PDF report generation
+- Containerization and deployment best practices
+- Clean code organization and scalable architecture
 
 ---
 
